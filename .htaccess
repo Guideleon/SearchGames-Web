@@ -1,0 +1,13 @@
+<IfModule mod_rewrite.c> 
+		RewriteEngine on 
+		#
+		RewriteCond %{REQUEST_FILENAME} !-d
+		RewriteCond %{REQUEST_FILENAME}\.html -f
+		RewriteRule ^(.*)$ $1.html [NC,L]
+		#
+		#RewriteRule ^game/(.*)$ game.html?id=$1 [QSA]
+		#
+		RewriteRule ^index\.html$ / [R=301,L]
+		RewriteRule ^(.*)/index\.html$ /$1/ [R=301,L]
+		
+</IfModule>
