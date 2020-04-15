@@ -1,6 +1,5 @@
 var nextPage = '';
 
-
 $(document).ready(function () {
   let searchParams = new URLSearchParams(window.location.search);
 
@@ -8,20 +7,15 @@ $(document).ready(function () {
     searchGames(searchParams.get('search'));
   }
 
-
   $('#searchForm').on('submit', function (e) {
     let searchText = $('#searchText').val();
     var params = {
       search: searchText
     };
     let searchParams = new URLSearchParams(window.location.search)
-
     console.log(searchParams);
-
     var str = jQuery.param(params);
-    console.log(str);
     searchGames(str)
-    //e.preventDefault();
   });
 });
 
@@ -84,7 +78,7 @@ function createCard(response) {
 					<div class="card-body">
 						<h5 class="card-title">${game.name}</h5>
 						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ornare, risus eu dignissim suscipit, tellus odio sollicitudin purus, quis mollis sapien magna et eros.</p>
-						<a class="btn btn-primary float-bottom btn-lg" onclick="gameSelected('${game.slug}')">Game Details</a>
+						<a class="btn btn-primary float-bottom btn-md" onclick="gameSelected('${game.slug}')">Game Details</a>
 					</div> 
                 </div>
             </div>
@@ -94,6 +88,6 @@ function createCard(response) {
 }
 
 function gameSelected(slug) {
-  window.location = 'game.html' + '?id=' + slug;
+  window.location = 'game' + '?id=' + slug;
   return false;
 }
