@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta charset="utf-8">
-<link rel="stylesheet" href="css/style.css"/>
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css"/>
-<link rel="stylesheet" href="https://bootswatch.com/4/slate/bootstrap.css"/>
-<title>Search Games</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <!--<link rel="stylesheet" href="https://bootswatch.com/4/slate/bootstrap.css"/> -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>Search Games</title>
 </head>
 
 <body>
-<nav class="navbar sticky-top bg-primary ">
-  <div class="container">
-    <div class="navbar-header"> <a class="navbar-brand" href="index">Search Games</a> </div>
-  </div>
-</nav>
-<div class="container">
-  <div class="jumbotron">
-    <h3 class="text-center">Search For Any Game</h3>
-    <p class="text-right">This Project is made using <a href="https://rawg.io/apidocs">RAWG API</a></p>
-    <form id="searchForm">
-      <div class="form-group">
-        <input name="search" type="text" class="form-control" id="searchText" placeholder="Search here">
-      </div>
-      <button type="submit" class="btn btn-primary">Search</button>
-    </form>
-  </div>
-</div>
-<div class="container">
-  <div id="games" class="row"></div>
-</div>
-<footer class="page-footer font-small">
-  <div class="footer-copyright bg-primary text-center py-3">This Project is made using <a href="https://rawg.io/apidocs">RAWG API</a></div>
-</footer>
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script> 
-<script src="https://kit.fontawesome.com/8ad73d7da0.js" crossorigin="anonymous"></script> 
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script> 
-<script src="js/main.js"></script>
-</body>
-</html>
+    <nav class="navbar sticky-top bg-primary navbar-dark">
+        <div class="container">
+            <div class="navbar-header"> <a class="navbar-brand" href="index">Search Games</a> </div>
+        </div>
+    </nav>
+    <div class="container p-3">
+        <div class="jumbotron">
+            <h3 class="text-center">Search For Any Game</h3>
+            <p class="text-right">This Project is made using <a href="https://rawg.io/apidocs">RAWG API</a></p>
+            <form id="searchForm">
+                <div class="form-group">
+                    <input name="search" type="text" class="form-control" id="searchText" placeholder="Search here">
+                </div>
+                <button type="submit" class="btn btn-primary">Search</button>
+            </form>
+        </div>
+    </div>
+    <div class="container">
+        <div id="games" class="row"></div>
+    </div>
+    <footer class="page-footer font-small">
+        <div class="footer-copyright text-center py-3">This Project is made using <a href="https://rawg.io/apidocs">RAWG API</a></div>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/8ad73d7da0.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="js/main.js"></script>
+</body></html>

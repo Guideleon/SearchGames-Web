@@ -1,110 +1,96 @@
 @charset "utf-8";
 
-html {
-  font-size: 1rem;
-}
-@include media-breakpoint-up(sm) {
-  html {
-    font-size: 1.2rem;
-  }
-}
-@include media-breakpoint-up(md) {
-  html {
-    font-size: 1.4rem;
-  }
-}
-@include media-breakpoint-up(lg) {
-  html {
-    font-size: 1.6rem;
-  }
-}
-
-
-
 @media (max-width:767.98px) {
-  #games .col-md-3 * {
-    transition: none !important;
-  }
-  #games .col-md-3 img {
-    width: 100%;
-    height: 250px;
-  }
-  #games .col-md-3 {
-    padding: 0px 0px 90px 0px;
-  }
-  #games .col-md-3 .card {
-    height: 450px;
-    width: 425px;
-    transition: all 0.2s;
-  }
-  #games .col-md-3 {
-    float: none;
-    margin: 0 auto;
-  }
+    #games .col-md-3 * {
+        transition: none !important;
+    }
+
+    #games .col-md-3 img {
+        width: 100%;
+        height: 250px;
+    }
+
+    #games .col-md-3 {
+        padding: 0px 0px 90px 0px;
+    }
+
+    #games .col-md-3 .card {
+        height: 450px;
+        width: 425px;
+        transition: all 0.2s;
+    }
+
+    #games .col-md-3 {
+        float: none;
+        margin: 0 auto;
+    }
 }
+
 @media (max-width:991.98px) and (min-width:767.98px) {
-  #games .col-md-3 h5 {
-    visibility: hidden;
-    display: none;
-  }
-  #games .col-md-3 .btn {
-    visibility: hidden;
-    display: none;
-  }
-  #games .col-md-3 p {
-    visibility: hidden;
-    display: none;
-  }
-  #games .col-md-3 {
-    padding: 15px;
-  }
-  #games .col-md-3 .card {
-    overflow: hidden;
-    padding: 0;
-    margin: 0;
-    transition: all 0.2s;
-  }
+    #games .col-md-3 h5 {
+        font-size: 1rem;
+    }
+
+    #games .col-md-3 .btn {
+        visibility: hidden;
+        display: none;
+    }
+
+    #games .col-md-3 p {
+        visibility: hidden;
+        display: none;
+    }
+
+    #games .col-md-3 {
+        padding: 15px;
+    }
+
+    #games .col-md-3 .card {
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+        transition: all 0.2s;
+    }
 }
+
 @media (max-width:1199.98px) and (min-width:991.98px) {
-  #games .col-md-3 {
-    padding: 15px;
-  }
-  #games .col-md-3 .card {
-    padding: 0;
-    margin: 0;
-    transition: all 0.2s;
-  }
+    #games .col-md-3 {
+        padding: 15px;
+    }
+
+    #games .col-md-3 .card {
+        padding: 0;
+        margin: 0;
+        transition: all 0.2s;
+    }
 }
+
 @media (min-width: 1199.98px) {
-  #games .col-md-3 .card {
-    padding: 0;
-    margin: 0;
-    transition: all 0.2s;
-  }
-  #games .col-md-3 {
-    padding: 25px;
-  }
+    #games .col-md-3 .card {
+        padding: 0;
+        margin: 0;
+        transition: all 0.2s;
+    }
+
+    #games .col-md-3 {
+        padding: 25px;
+    }
 }
+
 #games .col-md-3 .card:hover {
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  transform: scale(1.02);
-  -ms-transform: scale(1.02);
-  -webkit-transform: scale(1.02);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -webkit-transform: scale(1.02);
 }
+
 #games .col-md-3 .card img {
-  margin-bottom: 15px;
-  transition: all 0.25s;
+    margin-bottom: 15px;
+    transition: all 0.25s;
 }
+
 #games .col-md-3 .card img:hover {
-  transform: scale(1.02);
-  -ms-transform: scale(1.02);
-  -webkit-transform: scale(1.02);
-}
-#games .col-md-3 .card .btn {
-  background: linear-gradient(#434343, #171717);
-  transition: background 0.25s ease-out;
-  background-size: 1px 200px;
-}
-#games .col-md-3 .card .btn:hover {
-  background-position: 100px;
+    transform: scale(1.02);
+    -ms-transform: scale(1.02);
+    -webkit-transform: scale(1.02);
 }
