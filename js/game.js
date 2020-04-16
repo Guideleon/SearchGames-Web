@@ -6,7 +6,7 @@ $(document).ready(function () {
     } else {
         window.location = 'index';
     }
-
+    $('[data-toggle="tooltip"]').tooltip();
 });
 
 
@@ -14,7 +14,6 @@ function getInformation(slug) {
     axios.get('https://api.rawg.io/api/games/' + slug).then(function (response) {
 
         document.title = response.data.name + " - Search Games";
-
 
         let stores = '';
         let canBuy = false;
@@ -69,10 +68,10 @@ function getInformation(slug) {
             <div class="col-md">
                 ${(response.data.ratings != '' ? `<h4 class="pb-2">Rating</h4>
                 <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" style="width: ${response.data.ratings[0].percent}%" aria-valuenow="${response.data.ratings[0].percent}" aria-valuemin="0" aria-valuemax="100"></div>
-                    <div class="progress-bar" role="progressbar" style="width: ${response.data.ratings[1].percent}%" aria-valuenow="${response.data.ratings[1].percent}" aria-valuemin="0" aria-valuemax="100"></div>
-                    <div class="progress-bar bg-warning" role="progressbar" style="width: ${response.data.ratings[2].percent}%" aria-valuenow="${response.data.ratings[2].percent}" aria-valuemin="0" aria-valuemax="100"></div>
-                    <div class="progress-bar bg-danger" role="progressbar" style="width: ${response.data.ratings[3].percent}%" aria-valuenow="${response.data.ratings[3].percent}" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-success" role="progressbar" data-toggle="tooltip" title="${response.data.ratings[0].count}" style="width: ${response.data.ratings[0].percent}%" aria-valuenow="${response.data.ratings[0].percent}" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar" role="progressbar" data-toggle="tooltip" title="${response.data.ratings[1].count}" style="width: ${response.data.ratings[1].percent}%" aria-valuenow="${response.data.ratings[1].percent}" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-warning" role="progressbar" data-toggle="tooltip" title="${response.data.ratings[2].count}" style="width: ${response.data.ratings[2].percent}%" aria-valuenow="${response.data.ratings[2].percent}" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-danger" role="progressbar" data-toggle="tooltip" title="${response.data.ratings[3].count}" style="width: ${response.data.ratings[3].percent}%" aria-valuenow="${response.data.ratings[3].percent}" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>`: '')}
                 
             </div>
