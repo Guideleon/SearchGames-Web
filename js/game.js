@@ -20,7 +20,26 @@ function getInformation(slug) {
         if (response.data.stores != '') {
             canBuy = true;
             $.each(response.data.stores, (index, store) => {
-                stores += `<a href="${store.url}" class="list-group-item list-group-item-action list-group-item-primary">${store.store.name}</a>`;
+                stores += `<a href="${store.url}" target="_blank" class="list-group-item list-group-item-action list-group-item-primary">${store.store.name}</a>`;
+            })
+        }
+
+        let ratingHtml = '';
+        if (response.data.ratings != ''){
+            $.each(response.data.ratings, (index, rating) => {
+                let color = '';
+                if (rating.title == 'exceptional'){
+                    color = 'bg-success';
+                } else if (rating.title ==  'recommended'){
+                    color = '';
+                } else if (rating.title == 'meh'){
+                    color = 'bg-warning'
+                } else if (rating.title == 'skip'){
+                    color = 'bg-danger'
+                }
+
+
+                ratingHtml += `<div class="progress-bar ${color}" role="progressbar" data-toggle="tooltip" title="${rating.count}" style="width: ${rating.percent}%" aria-valuenow="${rating.percent}" aria-valuemin="0" aria-valuemax="100"></div>`;
             })
         }
 
@@ -29,7 +48,8 @@ function getInformation(slug) {
             `
         <div class="row">
             <div class="col-md-8 offset-4 mx-auto ">
-                <h3 class="pb-2">${response.data.name}</h3>
+                <p class="float-left h4">${response.data.name}</p>
+                <p class="float-right">${response.data.rating} / ${response.data.rating_top}</p>
                 <img class="img-thumbnail" src="${response.data.background_image}" alt="Game Image">
                 
                 <div class="row">
@@ -37,44 +57,44 @@ function getInformation(slug) {
                     <div class="col-md">
                         
                         <ul class="list-group pt-4">
-                            <h6 class="text-center">Genres</h6>
+                            <p class="text-center h6">Genres</p>
                             ${returnInformation(response.data.genres,'li','class="list-group-item"','data.name')}
                         </ul>
                     </div>
                     <div class="col-md">
                         <ul class="list-group pt-4">
-                            <h6 class="text-center">Platforms</h6>
+                            <p class="text-center h6">Platforms</p>
                             ${returnInformation(response.data.parent_platforms,'li','class="list-group-item"','data.platform.name')}
                         </ul>
                     </div>
                 </div>
 
             </div>
-            
         </div>
         <hr class="my-4">
+
         <div class="row">
             <div class="col-md">
-                <h4 class="pb-2">Description</h4>
+                <p class="pb-2 h4">Description</p>
                 <p>${response.data.description}</p>
-                
-                
+                <a href="${response.data.website}" target="_blank">Official Website</a>
             </div>
-            ${(canBuy ? `<div class="col-md"><h4 class="pb-2">Buy now</h4> <div class="list-group">${stores}</div></div>`: '')}
-        
+            ${(canBuy ? `<div class="col-md"><p class="pb-2 h4">Buy now</p> <div class="list-group">${stores}</div></div>`: '')}
+
         </div>
-        <hr/>
+        <hr class="my-4"/>
         <div class="row">
             <div class="col-md">
-                ${(response.data.ratings != '' ? `<h4 class="pb-2">Rating</h4>
+                ${(response.data.ratings != '' ? `<p class="pb-2 h4">Rating</p>
                 <div class="progress">
-                    <div class="progress-bar bg-success" role="progressbar" data-toggle="tooltip" title="${response.data.ratings[0].count}" style="width: ${response.data.ratings[0].percent}%" aria-valuenow="${response.data.ratings[0].percent}" aria-valuemin="0" aria-valuemax="100"></div>
-                    <div class="progress-bar" role="progressbar" data-toggle="tooltip" title="${response.data.ratings[1].count}" style="width: ${response.data.ratings[1].percent}%" aria-valuenow="${response.data.ratings[1].percent}" aria-valuemin="0" aria-valuemax="100"></div>
-                    <div class="progress-bar bg-warning" role="progressbar" data-toggle="tooltip" title="${response.data.ratings[2].count}" style="width: ${response.data.ratings[2].percent}%" aria-valuenow="${response.data.ratings[2].percent}" aria-valuemin="0" aria-valuemax="100"></div>
-                    <div class="progress-bar bg-danger" role="progressbar" data-toggle="tooltip" title="${response.data.ratings[3].count}" style="width: ${response.data.ratings[3].percent}%" aria-valuenow="${response.data.ratings[3].percent}" aria-valuemin="0" aria-valuemax="100"></div>
+                    ${ratingHtml}
                 </div>`: '')}
                 
             </div>
+        </div>
+        <div class="container p-3 my-4 border rounded text-center">
+            <p class="h4">Screenshots</p>
+            <div class="row"></div>
         </div>
 
 
