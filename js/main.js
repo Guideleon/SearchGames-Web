@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function handleIntersect(entries) {
-    if (entries[0].isIntersecting) {
+    if (entries[0].isIntersecting & nextPage != '') {
         getURLGames(nextPage);
     }
 }
@@ -79,7 +79,7 @@ function createCard(response) {
 						<h5 class="card-title">${game.name}</h5>
 						<p class="card-text">Lorem ipsum dolor sit amet</p>
 						<a class="btn btn-primary text-light btn-md" onclick="gameSelected('${game.slug}')">Game Details</a>
-					</div> 
+					</div>
                 </div>
             </div>
             `;
