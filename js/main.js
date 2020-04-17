@@ -77,7 +77,7 @@ function createCard(response) {
                     <img class="card-img-top" src="${game.background_image}">
 					<div class="card-body">
 						<h5 class="card-title">${game.name}</h5>
-						<p class="card-text">Lorem ipsum dolor sit amet</p>
+						<!-- <p class="card-text">Lorem ipsum dolor sit amet</p> --> 
 						<a class="btn btn-primary text-light btn-md" onclick="gameSelected('${game.slug}')">Game Details</a>
 					</div>
                 </div>
